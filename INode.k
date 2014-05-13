@@ -206,9 +206,9 @@ procedure 0 write (4 offset
 	  4 buffer_length)
 	  []
 {
-#while length is less than leading_immediate_data size + 4 for length (2048), 
+while ((< 2048 (+ leading_immediate_data size 4))){ #while length is less than leading_immediate_data size + 4 for length (2048), 
   #fill in leading immediate data
-#if length is >= leading immediate data.
+ifthen ((>= 2048 leading_immediate_data)){ #if length is >= leading immediate data.
     # calculate which direct index you should be looking at
     
     #while data buffer hasn't fully been written into INode
